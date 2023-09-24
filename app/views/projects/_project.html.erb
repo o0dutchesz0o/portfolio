@@ -1,0 +1,7 @@
+<div id="<%= dom_id project %>">
+    <p><strong>Title:</strong></p>
+    <p><%= project.title %></p>
+    <p><%= project.subtitle %></p>
+    <p><%= project.body %></p>
+    <%= image_tag project.thumb_image unless project.thumb_image.nil? %>
+</div>
