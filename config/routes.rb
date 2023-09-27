@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   get 'about-me', to: 'pages#about'
   get 'contact', to: 'pages#contact'
 
-  resources :blogs
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
   resources :projects, except: [:show]
   get 'project/id', to: 'projects#show', as: 'project_show'
 end
