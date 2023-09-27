@@ -2,7 +2,7 @@
   <p class="pointer">
     <%= link_to(
           image_tag(params[:action] == "show" ? project.main_image : project.thumb_image),
-          params[:action] == "index" ? project_path(project) : edit_project_path(project)) %>
+          params[:action] == "index" ? project_show_path(project) : edit_project_path(project)) %>
   </p>
   <h1><%= project.title %></h1>
   <em><%= project.subtitle %></em>
