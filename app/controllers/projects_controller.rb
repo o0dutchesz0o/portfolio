@@ -41,6 +41,15 @@ def update
   end
 end
 
+  def destroy
+    @project.destroy
+
+    respond_to do |format|
+      format.html { redirect_to projects_url, notice: "Project was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
 private
   def set_project
     @project = Project.find(params[:id])

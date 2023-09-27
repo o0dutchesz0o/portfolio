@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 3.times do | blog |
   Blog.create!(
-  title: "Sample Blog Post #{blog}",
+  title: "Sample Blog Post #{blog+1}",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere maximus libero sit amet scelerisque.
            Etiam molestie in ante vitae faucibus. Fusce in mi diam. Etiam pulvinar tellus egestas, maximus diam a,
            elementum turpis. Etiam in purus lacinia, euismod risus commodo, porta turpis. In sodales malesuada est non
@@ -38,13 +38,13 @@ puts "6 skills created"
 
 6.times do |project|
   Project.create!(
-    title: "Sample Project #{project}",
+    title: "Sample Project #{project+1}",
     subtitle: "Subtitle",
     body: "Phasellus lobortis tortor et nunc rutrum, quis aliquam nulla cursus. Ut commodo ligula nec tincidunt suscipit.
           Vestibulum eget ex leo. Nulla quis quam sollicitudin, maximus elit vitae, vulputate erat. Curabitur mollis est
           id est semper.",
-    main_image: "https://dummyimage.com/600x400/e319e3/208fd4.png&text=Project+#{project}",
-    thumb_image: "https://dummyimage.com/300x200/e319e3/208fd4.png&text=Project+#{project}"
+    main_image: "https://dummyimage.com/600x400/e319e3/208fd4.png&text=Project+#{project+1}",
+    thumb_image: "https://dummyimage.com/300x200/e319e3/208fd4.png&text=Project+#{project+1}"
   )
 end
 
