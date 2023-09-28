@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+  include Placeholder
   after_initialize :set_defaults
   validates_presence_of :title, :body, :main_image, :thumb_image
 
@@ -6,9 +7,8 @@ class Project < ApplicationRecord
   scope :sub, -> { where(subtitle: 'subtitle') }
 
   def set_defaults
-    self.main_image ||= "https://dummyimage.com/600x400/e319e3/208fd4.png"
-    self.thumb_image ||= "https://dummyimage.com/300x200/e319e3/208fd4.png"
-
+    self.main_image ||= Placeholder.image_generator(height:600, width: 400)
+    self.thumb_image ||= Placeholder.image_generator(height:300, width: 200)
   end
 
   # Custom scopes TODO: CAN REMOVE
