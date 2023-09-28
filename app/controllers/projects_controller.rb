@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    3.times { @project.technologies.build }
   end
 
   def create
@@ -55,7 +56,7 @@ private
     @project = Project.find(params[:id])
   end
   def project_params
-    params.require(:project).permit(:title, :subtitle, :body, :main_image, :thumb_image)
+    params.require(:project).permit(:title, :subtitle, :body, :main_image, :thumb_image, technologies_attributes: [:name])
   end
 
 end

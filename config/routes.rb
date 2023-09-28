@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   end
 
   resources :projects, except: [:show]
-  get 'project/id', to: 'projects#show', as: 'project_show' #as - to customize the _path
+  get 'project/:id', to: 'projects#show', as: 'project_show' #as - to customize the _path
 end
