@@ -1,7 +1,11 @@
 class Project < ApplicationRecord
   include Placeholder
+
   after_initialize :set_defaults
+
   validates_presence_of :title, :body, :main_image, :thumb_image
+
+  has_many :technologies
 
   # Custom scopes TODO: CAN REMOVE
   scope :sub, -> { where(subtitle: 'subtitle') }
