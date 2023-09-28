@@ -59,10 +59,11 @@ end
 
 puts "6 projects created."
 
-6.times do |tech|
+technologies = ['Ruby', 'Rails', 'Angular', 'TypeScript', 'JavaScript']
+technologies.each_with_index do |tech, i|
   Technology.create!(
-    name: "Tech #{tech+1}",
-    project_id: tech+1
+    name: tech,
+    project_id: i+1
   )
 end
 
