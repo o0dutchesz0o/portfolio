@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   root "pages#home"
 
   get 'about-me', to: 'pages#about'
-  get 'contact', to: 'pages#contact'
+  get 'contact', to: 'pages#contact' #to - to customize route
 
   resources :blogs do
     member do
       get :toggle_status
     end
   end
+
   resources :projects, except: [:show]
-  get 'project/id', to: 'projects#show', as: 'project_show'
+  get 'project/id', to: 'projects#show', as: 'project_show' #as - to customize the _path
 end
