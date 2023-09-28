@@ -5,18 +5,27 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+3.times do | topic|
+  Topic.create!(
+    title: "Topic #{topic + 1}"
+  )
+end
+
+puts "3 topics created"
+
 3.times do | blog |
   Blog.create!(
   title: "Sample Blog Post #{blog+1}",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere maximus libero sit amet scelerisque.
-           Etiam molestie in ante vitae faucibus. Fusce in mi diam. Etiam pulvinar tellus egestas, maximus diam a,
-           elementum turpis. Etiam in purus lacinia, euismod risus commodo, porta turpis. In sodales malesuada est non
-           consequat. Phasellus urna felis, ultrices id dictum in, suscipit vitae est. Etiam sagittis elementum mi et
-           ultrices.
+  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras posuere maximus libero sit amet scelerisque.
+         Etiam molestie in ante vitae faucibus. Fusce in mi diam. Etiam pulvinar tellus egestas, maximus diam a,
+         elementum turpis. Etiam in purus lacinia, euismod risus commodo, porta turpis. In sodales malesuada est non
+         consequat. Phasellus urna felis, ultrices id dictum in, suscipit vitae est. Etiam sagittis elementum mi et
+         ultrices.
 
-          Phasellus lobortis tortor et nunc rutrum, quis aliquam nulla cursus. Ut commodo ligula nec tincidunt suscipit.
-          Vestibulum eget ex leo. Nulla quis quam sollicitudin, maximus elit vitae, vulputate erat. Curabitur mollis est
-          id est semper."
+        Phasellus lobortis tortor et nunc rutrum, quis aliquam nulla cursus. Ut commodo ligula nec tincidunt suscipit.
+        Vestibulum eget ex leo. Nulla quis quam sollicitudin, maximus elit vitae, vulputate erat. Curabitur mollis est
+        id est semper.",
+  topic_id: blog+1
   )
 end
 
