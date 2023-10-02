@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: %i[ show edit update destroy toggle_status ]
-
+  before_action :set_title
   # GET /blogs or /blogs.json
   def index
     @blogs = Blog.all
@@ -66,6 +66,10 @@ class BlogsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.friendly.find(params[:id])
+    end
+
+    def set_title
+      @page_title = "Blogs | Jenn's Portfolio"
     end
 
     # Only allow a list of trusted parameters through.
