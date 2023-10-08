@@ -3,7 +3,7 @@
 <h1>Blogs</h1>
 
 <div id="blogs">
-    <%= render @blogs %>
+    <%= render partial: @blogs, spacer_template: 'blog_ruler' %>
 </div>
 
 <%= link_to "New blog", new_blog_path %>
